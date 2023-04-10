@@ -15,11 +15,11 @@
 
 **Consider support threshold $s = 3$ in this case. Apply the `A-priori` algorithm to find the frequent item sets.**
 
-**(a) Find the frequent items: $L_1 = \{\}$**
+**(a) Find the frequent items: $L_1 = $ $\{$ __________ $\}$**
 
-**(b) Then, construct the candidate pairs using items in L1. The set of candidate pairs is: $C_2 = \{\}$**
+**(b) Then, construct the candidate pairs using items in L1. The set of candidate pairs is: $C_2 = $ $\{$ __________ $\}$**
 
-**(c) Filter on C2 to obtain frequent item tuples: $L_2 = \{\}$**
+**(c) Filter on C2 to obtain frequent item tuples: $L_2 = $ $\{$ __________ $\}$**
 
 **(d) Now suppose instead of `A-priori`, you are using the `PCY` algorithm to further optimize the process. During the first pass, you also hash each pair of items into a bucket, and maintain the count of pairs for each bucket. For $a$ bucket $b$ with count $c$, what can you say about the pairs that hash to $b$ if $c ≥ s$? (Possible answers: They must be frequent, they cannot be frequent, or not sure.)**
 
@@ -38,7 +38,7 @@
 
 **Giả sử ngưỡng hỗ trợ là $s = 3$. Áp dụng thuật toán `A-priori` để tìm các tập mục phổ biến.**
 
-**(a) Tìm các mục phổ biến: $L_1 = \{\}$**
+**(a) Tìm các mục phổ biến: $L_1 = $ $\{$ __________ $\}$**
 
 **Đáp án:**
 
@@ -56,7 +56,7 @@ Với ngưỡng hỗ trợ là 3, ta có bảng đếm số lần xuất hiện 
 >> $\rightarrow L_1 = \{basket, friend, atmosphere, learning\}$
 
 
-**(b) Sau đó, xây dựng các cặp ứng viên từ các mục trong L1. Tập các cặp ứng viên là: $C_2 = \{\}$**
+**(b) Sau đó, xây dựng các cặp ứng viên từ các mục trong L1. Tập các cặp ứng viên là: $C_2 = $ $\{$ __________ $\}$**
 
 **Đáp án:**
 
@@ -73,7 +73,7 @@ Ta có bảng đếm số lần xuất hiện $C_2$ như sau:
 
 >> $\rightarrow C_2 = \{\{basket, friend\}, \{basket, atmosphere\}, \{basket, learning\}, \{friend, atmosphere\}, \{friend, learning\}, \{atmosphere, learning\}\}$
 
-**(c) Lọc trên C2 để tìm các tập mục phổ biến: $L_2 = \{\}$**
+**(c) Lọc trên C2 để tìm các tập mục phổ biến: $L_2 = $ $\{$ __________ $\}$**
 
 **Đáp án:**
 
