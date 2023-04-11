@@ -1,4 +1,4 @@
-# **Bài tập 6: Clustering**
+# **Bài tập 6: Clustering** ✅
 
 ## **1. Bản tiếng Anh**
 

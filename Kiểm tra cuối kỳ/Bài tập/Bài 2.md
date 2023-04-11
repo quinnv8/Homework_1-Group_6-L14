@@ -1,4 +1,4 @@
-# **Bài tập 2: Map Reduce**
+# **Bài tập 2: Map Reduce** ✅
 
 ## **1. Bản English**
 

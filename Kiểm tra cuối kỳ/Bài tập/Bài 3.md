@@ -1,4 +1,4 @@
-# **Bài tập 3: Frequent Item Set Mining**
+# **Bài tập 3: Frequent Item Set Mining** ❌
 
 ## **1. Bản tiếng Anh**
 
@@ -53,7 +53,9 @@ Với ngưỡng hỗ trợ là 3, ta có bảng đếm số lần xuất hiện 
 |$atmosphere$|3|
 |$learning$|3|
 
->> $\rightarrow L_1 = \{basket, friend, atmosphere, learning\}$
+$\rightarrow L_1 = \{basket, friend, atmosphere, learning\}$
+
+>>**Giải thích:** Với ngưỡng hỗ trợ là 3, chúng ta chỉ lấy các mục có số lần xuất hiện lớn hơn hoặc bằng 3. Ở đây, các mục có số lần xuất hiện lớn hơn hoặc bằng 3 là: $basket, friend, atmosphere, learning$.
 
 
 **(b) Sau đó, xây dựng các cặp ứng viên từ các mục trong L1. Tập các cặp ứng viên là: $C_2 = $ $\{$ __________ $\}$** ✅
@@ -71,13 +73,17 @@ Ta có bảng đếm số lần xuất hiện $C_2$ như sau:
 |$\{friend, learning\}$|2|
 |$\{atmosphere, learning\}$|1|
 
->> $\rightarrow C_2 = \{\{basket, friend\}, \{basket, atmosphere\}, \{basket, learning\}, \{friend, atmosphere\}, \{friend, learning\}, \{atmosphere, learning\}\}$
+$\rightarrow C_2 = \{\{basket, friend\}, \{basket, atmosphere\}, \{basket, learning\}, \{friend, atmosphere\}, \{friend, learning\}, \{atmosphere, learning\}\}$
+
+>>**Giải thích:** Từ các ứng viên trong $L_1$, ta có thể xây dựng được các cặp ứng viên $C_2$ bằng cách kết hợp các mục trong $L_1$ với nhau. Sau đó, ta đếm số lần xuất hiện của các cặp ứng viên trong tập dữ liệu giao dịch.
 
 **(c) Lọc trên C2 để tìm các tập mục phổ biến: $L_2 = $ $\{$ __________ $\}$** ✅
 
 **Đáp án:**
 
->> $\rightarrow L_2 = \{\{friend, atmosphere\}\}$
+$\rightarrow L_2 = \{\{friend, atmosphere\}\}$
+
+>>**Giải thích:** Với ngưỡng hỗ trợ là 3, chúng ta chỉ lấy các cặp ứng viên có số lần xuất hiện lớn hơn hoặc bằng 3. Ở đây, các cặp ứng viên có số lần xuất hiện lớn hơn hoặc bằng 3 là: $\{friend, atmosphere\}$.
 
 ~~**(d) Giả sử thay vì `A-priori`, chúng ta sử dụng thuật toán `PCY` để tối ưu hóa quá trình. Trong lần duyệt đầu tiên, chúng ta cũng băm mỗi tập mục vào một bucket, và duy trì số lần xuất hiện của các tập mục trong mỗi bucket. Với một bucket $b$ với số lần xuất hiện là $c$, chúng ta có thể nói gì về các tập mục băm vào $b$ nếu $c ≥ s$? (Các câu trả lời có thể là: Chúng phải là các tập mục phổ biến, chúng không thể là các tập mục phổ biến, hoặc không chắc chắn.)**~~ ❌
 
