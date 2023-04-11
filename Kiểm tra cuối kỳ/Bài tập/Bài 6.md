@@ -30,7 +30,7 @@ If we set $k = 2$, the initial centroids be $P_1$ and $P_4$, and we are using `E
 
 **Bài tập:**
 
-**(a) Trong câu hỏi này, bạn sẽ thực hiện một phép tính `K-means` đơn giản.**
+**(a) Trong câu hỏi này, bạn sẽ thực hiện một phép tính `K-means` đơn giản.** ✅
 
 |Points| x | y |
 |---|---|---|
@@ -70,32 +70,32 @@ Ta thấy rằng, điểm $P_2$ có khoảng cách nhỏ nhất với $P_1$, và
 
 |Centroids| coordinates members |
 |---|---|
-|$Centroid_1$ | $P_1$, $P_2$|
-|$Centroid_2$ | $P_3$, $P_4$, $P_5$, $P_6$, $P_7$|
+|$C_1$ | $P_1$, $P_2$|
+|$C_2$ | $P_3$, $P_4$, $P_5$, $P_6$, $P_7$|
 
 *Tính lại các điểm trung tâm:*
 
 Ta tính lại các điểm trung tâm của các cụm như sau:
 
-$$X_{centroid_1} = \frac{1.0 + 1.5}{2} = 1.25$$
+$$X_{C_1} = \frac{1.0 + 1.5}{2} = 1.25$$
 
-$$Y_{centroid_1} = \frac{1.0 + 2.0}{2} = 1.5$$
+$$Y_{C_1} = \frac{1.0 + 2.0}{2} = 1.5$$
 
-$$X_{centroid_2} = \frac{3.0 + 5.0 + 3.5 + 4.5 + 3.5}{5} = 3.9$$
+$$X_{C_2} = \frac{3.0 + 5.0 + 3.5 + 4.5 + 3.5}{5} = 3.9$$
 
-$$Y_{centroid_2} = \frac{4.0 + 7.0 + 5.0 + 5.0 + 4.5}{5} = 5.3$$
+$$Y_{C_2} = \frac{4.0 + 7.0 + 5.0 + 5.0 + 4.5}{5} = 5.3$$
 
 Vậy, các điểm trung tâm mới là:
 
-$$Centroid_1 = (1.25, 1.5)$$
+$$C_1 = (1.25, 1.5)$$
 
-$$Centroid_2 = (3.9, 5.3)$$
+$$C_2 = (3.9, 5.3)$$
 
 ***Vòng lặp thứ hai:***
 
 Với các điểm trung tâm mới, ta có khoảng cách giữa các điểm còn lại với các điểm trung tâm như sau:
 
-|Points| $d(Centroid_1, P_i)$ | $d(Centroid_2, P_i)$ |
+|Points| $d(C_1, P_i)$ | $d(C_2, P_i)$ |
 |---|---|---|
 |1|0.559|5.187|
 |2|0.559|4.080|
@@ -105,18 +105,23 @@ Với các điểm trung tâm mới, ta có khoảng cách giữa các điểm c
 |6|4.776|0.671|
 |7|3.750|0.894|
 
-Ta thấy rằng, điểm $P_1$, $P_2$ có khoảng cách nhỏ nhất với $Centroid_1$, và các điểm $P_3$, $P_4$, $P_5$, $P_6$ và $P_7$ có khoảng cách nhỏ nhất với $Centroid_2$. Vậy, ta sẽ gán các điểm này vào các cụm tương ứng.
+Ta thấy rằng, điểm $P_1$, $P_2$ có khoảng cách nhỏ nhất với $Centroid_1$, và các điểm $P_3$, $P_4$, $P_5$, $P_6$ và $P_7$ có khoảng cách nhỏ nhất với $C_2$. Vậy, ta sẽ gán các điểm này vào các cụm tương ứng.
 
 |Centroids| coordinates members |
 |---|---|
-|$Centroid_1$ | $P_1$, $P_2$|
-|$Centroid_2$ | $P_3$, $P_4$, $P_5$, $P_6$, $P_7$|
+|$C_1$ | $P_1$, $P_2$|
+|$C_2$ | $P_3$, $P_4$, $P_5$, $P_6$, $P_7$|
 
 Ta nhận thấy rằng, các điểm trung tâm mới không thay đổi so với các điểm trung tâm cũ, nên thuật toán `K-means` đã kết thúc.
 
-$ \rightarrow $ Bảng trên chính là kết quả cuối cùng của `K-means` với $k = 2$.
+$ \rightarrow $ Kết quả cuối cùng của `K-means` là:
 
-**(b) Câu hỏi đúng/sai về `K-means`. Nếu chúng ta sử dụng khoảng cách `Euclidean`, chi phí qua các lần lặp luôn giảm dần:__________**
+|Centroids| coordinates members |
+|---|---|
+|$C_1$ | $P_1$, $P_2$|
+|$C_2$ | $P_3$, $P_4$, $P_5$, $P_6$, $P_7$|
+
+**(b) Câu hỏi đúng/sai về `K-means`. Nếu chúng ta sử dụng khoảng cách `Euclidean`, chi phí qua các lần lặp luôn giảm dần:__________** ✅
 
 **Đáp án:** Đúng
 
@@ -128,7 +133,7 @@ Trong đó, $x_i$ là điểm dữ liệu thứ $i$, $\mu_{c_i}$ là điểm tru
 
 Mục tiêu của `K-means` là tối thiểu hóa hàm chi phí $J$. Với mỗi lần lặp, ta sẽ tìm được các điểm trung tâm mới, và hàm chi phí sẽ giảm dần. Vì vậy, chi phí qua các lần lặp luôn giảm dần.
 
-**(c) Giải thích hai loại phân bố dữ liệu hai chiều khác nhau mà `K-means` có thể không thể tạo ra các cụm chính xác. Cung cấp một số minh họa của dữ liệu trong không gian hai chiều `Euclidean`, và giải thích ngắn gọn.**
+~~**(c) Giải thích hai loại phân bố dữ liệu hai chiều khác nhau mà `K-means` có thể không thể tạo ra các cụm chính xác. Cung cấp một số minh họa của dữ liệu trong không gian hai chiều `Euclidean`, và giải thích ngắn gọn.**~~ ❌
 
 **Đáp án:** `K-means` không thể tạo ra các cụm chính xác khi dữ liệu có 2 dạng như sau:
 

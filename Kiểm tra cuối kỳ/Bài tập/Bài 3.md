@@ -38,7 +38,7 @@
 
 **Giả sử ngưỡng hỗ trợ là $s = 3$. Áp dụng thuật toán `A-priori` để tìm các tập mục phổ biến.**
 
-**(a) Tìm các mục phổ biến: $L_1 = $ $\{$ __________ $\}$**
+**(a) Tìm các mục phổ biến: $L_1 = $ $\{$ __________ $\}$** ✅
 
 **Đáp án:**
 
@@ -56,7 +56,7 @@ Với ngưỡng hỗ trợ là 3, ta có bảng đếm số lần xuất hiện 
 >> $\rightarrow L_1 = \{basket, friend, atmosphere, learning\}$
 
 
-**(b) Sau đó, xây dựng các cặp ứng viên từ các mục trong L1. Tập các cặp ứng viên là: $C_2 = $ $\{$ __________ $\}$**
+**(b) Sau đó, xây dựng các cặp ứng viên từ các mục trong L1. Tập các cặp ứng viên là: $C_2 = $ $\{$ __________ $\}$** ✅
 
 **Đáp án:**
 
@@ -73,13 +73,13 @@ Ta có bảng đếm số lần xuất hiện $C_2$ như sau:
 
 >> $\rightarrow C_2 = \{\{basket, friend\}, \{basket, atmosphere\}, \{basket, learning\}, \{friend, atmosphere\}, \{friend, learning\}, \{atmosphere, learning\}\}$
 
-**(c) Lọc trên C2 để tìm các tập mục phổ biến: $L_2 = $ $\{$ __________ $\}$**
+**(c) Lọc trên C2 để tìm các tập mục phổ biến: $L_2 = $ $\{$ __________ $\}$** ✅
 
 **Đáp án:**
 
 >> $\rightarrow L_2 = \{\{friend, atmosphere\}\}$
 
-**(d) Giả sử thay vì `A-priori`, chúng ta sử dụng thuật toán `PCY` để tối ưu hóa quá trình. Trong lần duyệt đầu tiên, chúng ta cũng băm mỗi tập mục vào một bucket, và duy trì số lần xuất hiện của các tập mục trong mỗi bucket. Với một bucket $b$ với số lần xuất hiện là $c$, chúng ta có thể nói gì về các tập mục băm vào $b$ nếu $c ≥ s$? (Các câu trả lời có thể là: Chúng phải là các tập mục phổ biến, chúng không thể là các tập mục phổ biến, hoặc không chắc chắn.)**
+~~**(d) Giả sử thay vì `A-priori`, chúng ta sử dụng thuật toán `PCY` để tối ưu hóa quá trình. Trong lần duyệt đầu tiên, chúng ta cũng băm mỗi tập mục vào một bucket, và duy trì số lần xuất hiện của các tập mục trong mỗi bucket. Với một bucket $b$ với số lần xuất hiện là $c$, chúng ta có thể nói gì về các tập mục băm vào $b$ nếu $c ≥ s$? (Các câu trả lời có thể là: Chúng phải là các tập mục phổ biến, chúng không thể là các tập mục phổ biến, hoặc không chắc chắn.)**~~ ❌
 
 **Đáp án:** Không chắc chắn.
 

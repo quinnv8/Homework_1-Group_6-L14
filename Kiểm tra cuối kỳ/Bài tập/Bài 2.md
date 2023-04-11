@@ -13,19 +13,19 @@
 ## **2. Bản tiếng Việt**
 **Bài tập:** Cho hai tập hợp $R = \{a, b, c\}$ và $S = \{b, e, f\}$. Yêu cầu tìm tập hợp $R \setminus S$, tức là tập hợp các phần tử chỉ có trong $R$ mà không có trong $S$. Thiết kế hàm `Map`, `Group by Key` và `Reduce` để tính toán tập hợp này, và viết kết quả dưới dạng $a, b, c, e, f, R, S$.
 
-**(a) Đối với tập hợp $R, S$, hàm `Map` sẽ tạo ra gì?**
+**(a) Đối với tập hợp $R, S$, hàm `Map` sẽ tạo ra gì?** ✅
 
 **Đáp án:** $\{(a, R), (b, R), (c, R), (b, S), (e, S), (f, S)\}$.
 
 >>**Giải thích:** Hàm `Map` sẽ tạo ra một tập hợp các cặp `(key, value)` với `key` là phần tử thuộc tập hợp, và `value` là tên tập hợp chứa phần tử đó. 
 
-**(b) Hàm `Group by Key` sẽ tạo ra gì?**
+**(b) Hàm `Group by Key` sẽ tạo ra gì?** ✅
 
 **Đáp án:** $\{(a, [R]), (b, [R, S]), (c, [R]), (e, [S]), (f, [S])\}$.
 
 >>**Giải thích:** Hàm `Group by Key` sẽ gom lại các cặp `(key, value)` có cùng `key` giống nhau thành một cặp `(key, [value1, value2, ...])`. 
 
-**(c) Hàm `Reduce` sẽ tạo ra gì cho tập hợp $R \setminus S$?**
+**(c) Hàm `Reduce` sẽ tạo ra gì cho tập hợp $R \setminus S$?** ✅
 
 **Đáp án:** $\{a, c\}$.
 
