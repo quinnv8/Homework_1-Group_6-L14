@@ -9,17 +9,6 @@
 
 Mô hình `MapReduce` có nhiều ứng dụng thực tế, như ứng dụng vào tính toán phân tán và song song.
 
-### **1.2. Tính toán phân tán và song song** ❌
-
-`Tính toán song song:` là một kỹ thuật trong đó các tác vụ tính toán được thực hiện đồng thời trên nhiều CPU hoặc core trong một máy tính. Kỹ thuật này cho phép tăng tốc độ tính toán bằng cách chia nhỏ tác vụ thành các phần nhỏ và thực hiện chúng đồng thời trên nhiều CPU hoặc core. Điều này giúp giảm thời gian xử lý và tăng hiệu suất máy tính.
-
-`Phân tán:` là một kỹ thuật trong đó các tác vụ tính toán được phân chia và thực hiện trên nhiều máy tính khác nhau được kết nối bằng mạng. Các máy tính trong mạng được gọi là node, và chúng hoạt động như một hệ thống tính toán phân tán. Điều này cho phép tăng tốc độ xử lý bằng cách phân tán dữ liệu và tính toán trên nhiều node đồng thời. Phân tán cũng giúp tăng tính khả dụng và độ tin cậy bằng cách phân tán dữ liệu trên nhiều node, giảm thiểu rủi ro mất dữ liệu do lỗi hệ thống.
-
-### **1.3. Một ví dụ về chương trình ứng dụng MapReduce** ❌
-`Apache Spark` là một hệ thống tính toán phân tán mã nguồn mở được phát triển bởi Apache Software Foundation. Nó được thiết kế để xử lý dữ liệu lớn và phân tích thời gian thực trên các cluster phân tán.
-
-Spark được xây dựng trên mô hình trừu tượng dữ liệu phân tán gọi là Resilient Distributed Dataset (RDD). RDD là một tập hợp các đối tượng phân tán có thể được xử lý song song trên các node trong một cluster. Điều này cho phép Spark xử lý các tập dữ liệu lớn nhanh hơn bằng cách phân tán chúng trên nhiều node.
-
 ## **2. Itemsets Mining - Association Rule**
 ### **2.1. Itemsets Mining là gì?** ✅
 `Itemsets mining` là quá trình khai thác dữ liệu để tìm kiếm tập các mặt hàng hay mẫu xuất hiện cùng nhau trong tập dữ liệu. Nó là một phần quan trọng của khai thác luật kết hợp trong dữ liệu và được sử dụng rộng rãi trong các ứng dụng thương mại điện tử, marketing và phân tích dữ liệu để tìm kiếm các kết hợp sản phẩm hay dịch vụ phổ biến và kết hợp đó để đưa ra các quyết định kinh doanh hiệu quả.
@@ -29,22 +18,6 @@ Spark được xây dựng trên mô hình trừu tượng dữ liệu phân tá
 
 ### **2.3. Các thuật toán phổ biến trong Itemsets Mining** ✅
 Có nhiều thuật toán được sử dụng để khai thác các luật kết hợp trong dữ liệu như `Apriori`, `FP-Growth`.
-
-### **2.4. Cách hoạt động của thuật toán Apriori** ❌
-
-- **Bước 1:** Đặt một ngưỡng hỗ trợ (support threshold) cho các tập phổ biến. Ngưỡng này xác định số lần xuất hiện tối thiểu của một tập hợp để được coi là phổ biến.
-
-- **Bước 2:** Tìm tất cả các mục xuất hiện trong các giao dịch và sắp xếp chúng theo thứ tự tăng dần của tần suất xuất hiện.
-
-- **Bước 3:** Xác định các mục phổ biến đơn (frequent itemsets) bằng cách duyệt qua tất cả các giao dịch và kiểm tra số lần xuất hiện của từng mục.
-
-- **Bước 4:** Sử dụng các mục phổ biến đơn để tạo ra các tập hợp mục phổ biến kết hợp. Tập hợp này bao gồm các tập con có kích thước nhỏ hơn hoặc bằng kích thước của các mục phổ biến đơn.
-
-- **Bước 5:** Xác định các tập phổ biến kết hợp bằng cách duyệt qua tất cả các tập hợp mục phổ biến kết hợp và kiểm tra số lần xuất hiện của từng tập hợp.
-
-- **Bước 6:** Lặp lại các bước 4 và 5 cho đến khi không còn tập phổ biến kết hợp nào được tạo ra.
-
-- **Bước 7:** Sử dụng tập hợp các mục phổ biến để tạo ra các luật kết hợp (association rules), được đánh giá dựa trên các ngưỡng hỗ trợ và độ tin cậy (confidence threshold).
 
 ### **2.5. Một số chỉ số đo lường** ✅
 
@@ -56,39 +29,17 @@ $$ S(A) = Support(A) = Pr(A) $$
 
 $$ conf(A → B) = Pr(B|A) = \frac{Support(A \cup B)}{Support(A)} $$
 
-* **Lift ❌: (được ký hiệu là lift(A → B))** Lift đo lường giữa " xác suất A và B xuất hiện cùng nhau" so với "xác suất A và B xuất hiện một cách độc lập về mặt thống kê":
-
-$$ lift(A → B) = \frac{conf(A → B)}{S(B)} = \frac{Support(A \cup B)}{Support(A) \times Support(B)} $$
-
-* **Conviction ❌: (được ký hiệu là conv(A → B))** Conviction so sánh "xác suất A xuất hiện mà không có B nếu chúng độc lập" với "tần suất thực sự của sự xuất hiện của A mà không có B":
-
-$$ conv(A → B) = \frac{1 - S(B)}{1 - conf(A → B)} $$
-
 ## **3. Locality Sensitive Hashing**
 ### **3.1. LSH là gì?** ✅
 `Local Sensitive Hashing (LSH)` là một kỹ thuật được sử dụng trong khai thác dữ liệu để tìm kiếm các đối tượng tương tự trong các tập dữ liệu lớn.
 
-### **3.2. Cách hoạt động của LSH** ❌
-`LSH` hoạt động bằng cách ánh xạ các đối tượng trong không gian $n$ chiều thành các vector trong không gian $m$ chiều, với $m < n$. Sau đó, các vector này được mã hóa thành các giá trị băm, và được phân bố vào các khối dựa trên giá trị băm của chúng. Các đối tượng có giá trị băm giống nhau sẽ được phân vào cùng một khối, do đó chúng sẽ được coi là tương tự. Điều này cho phép tìm kiếm các đối tượng tương tự trong các tập dữ liệu lớn một cách nhanh chóng bằng cách chỉ tìm kiếm các đối tượng trong cùng một khối.
-
 Tuy nhiên, `LSH` cũng có một số hạn chế, bao gồm độ chính xác thấp và khó khăn trong việc tìm ra tham số phù hợp cho hàm băm.
-
-### **3.3. Ứng dụng của LSH** ❌
-`LSH` được sử dụng rộng rãi trong các ứng dụng như tìm kiếm hình ảnh, tìm kiếm văn bản và khai thác đồ thị.
 
 ## **4. K-Means Clustering**
 ### **4.1. Clustering là gì?** ✅
 `Clustering` là một kỹ thuật trong khai thác dữ liệu được sử dụng để phân loại các đối tượng vào các nhóm tương đồng dựa trên các đặc trưng của chúng. 
 
 Mục đích của `Clustering` là tìm ra cấu trúc ẩn của các tập dữ liệu, giúp phát hiện ra các mẫu, nhóm tương đồng và xu hướng tồn tại trong dữ liệu.
-
-### **4.2. Cách hoạt động của K-Means Clustering** ❌
-Thuật toán K-means là một trong những phương pháp phổ biến nhất trong Clustering. Nó là một phương pháp cơ bản của Clustering, nơi các đối tượng được phân loại vào các nhóm dựa trên khoảng cách Euclide giữa chúng. Các bước thực hiện của thuật toán K-means bao gồm:
-
->> 1. **Khởi tạo các trung tâm cụm ban đầu:** Đầu tiên, các trung tâm cụm ban đầu được chọn ngẫu nhiên từ tập dữ liệu.
->> 2. **Phân loại các điểm dữ liệu vào các cụm gần nhất:** Sau đó, mỗi điểm dữ liệu được phân loại vào cụm gần nhất với nó dựa trên khoảng cách Euclide giữa các điểm dữ liệu và các trung tâm cụm.
->> 3. **Tính toán trung tâm mới cho mỗi cụm:** Sau khi phân loại các điểm dữ liệu vào các cụm, các trung tâm mới được tính toán bằng cách lấy trung bình của tất cả các điểm dữ liệu trong cụm đó.
->> 4. **Lặp lại các bước 2 và 3 cho đến khi các trung tâm cụm không thay đổi:** Các bước 2 và 3 được lặp lại cho đến khi các trung tâm cụm không thay đổi, tức là các điểm dữ liệu không được phân loại vào các cụm khác nữa.
 
 ### **4.3. Ứng dụng của Clustering** ✅
 Thuật toán này có thể được sử dụng để phân loại các đối tượng vào các nhóm tương đồng trong nhiều ứng dụng như xử lý hình ảnh, phân tích văn bản, phân loại khách hàng và phát hiện gian lận.

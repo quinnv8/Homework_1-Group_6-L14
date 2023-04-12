@@ -50,28 +50,6 @@ Tương tự với các hàng còn lại, ta có bảng đã được chuẩn h�
 | Reader4 | 0.5 | -0.5 | |
 | Reader5 | -1.5 | | 1.5 |
 
-**Ngoài lề ❌:** Nếu đề bài bắt tình độ tương đồng bằng công thức `Pearson` thì ta sẽ tính toán như sau:
-
-Đầu tiên ta cần tính trung bình đánh giá của mỗi người đọc. Công thức trung bình đánh giá của một người đọc là:
-
-$$ \bar{r_x} = \frac{r_{x1} + r_{x2} + ... + r_{xn}}{n} $$
-
-$$ hoặc $$
-
-$$ \bar{r_y} = \frac{r_{y1} + r_{y2} + ... + r_{yn}}{n} $$
-
-Ta có công thức tính độ tương đồng `Pearson` giữa hai người đọc $x$ và $y$ như sau:
-
-$$ sim(x, y) = \frac{\sum_{s \in S_{xy}} (r_{xs} - \bar{r}_x) \cdot (r_{ys} - \bar{r}_y)}{\sqrt{\sum_{s \in S_{xy}} (r_{xs} - \bar{r}_x)^2} \sqrt{\sum_{s \in S_{xy}} (r_{ys} - \bar{r}_y)^2}} $$
-
-*Trong đó:*
-
-- $S_{xy}$ là tập hợp các cuốn sách mà cả $x$ và $y$ đều đã đánh giá.
-- $r_{xs}$ là đánh giá của người đọc $x$ cho cuốn sách $s$.
-- $r_{ys}$ là đánh giá của người đọc $y$ cho cuốn sách $s$.
-- $\bar{r}_x$ là trung bình đánh giá của người đọc $x$ trên các cuốn sách mà $x$ đã đánh giá.
-- $\bar{r}_y$ là trung bình đánh giá của người đọc $y$ trên các cuốn sách mà $y$ đã đánh giá.
-
 **(a) Sử dụng phương pháp `user-user` và phương pháp đo độ tương đồng `Cosine` để tính toán đánh giá của `Reader1` cho `Book1` dựa trên hai người đọc tương tự nhất với `Reader1`. Hãy cho biết các bước tính toán và đánh dấu đánh giá cuối cùng của bạn.** ✅
 
 **Đáp án:**
@@ -104,32 +82,6 @@ Với `Reader1` và `Reader2`: $$ sim(1, 2) = \cos(r_1, r_2) = \frac{r_1 \cdot r
 | | Reader2 | Reader3 | Reader4 | Reader5 |
 |---|---|---|---|---|
 | $cos(r_1, r_i)$ | $0.283$ | $0$ | $0.4$ | $0.447$ |
-
----
-
-**❌ `Phương pháp Pearson`:**
-
-Trung bình đánh giá của các người đọc như sau:
-
-$$ \bar{r}_1 = \frac{0 + 2 + 1}{3} = 1; \bar{r}_2 = \frac{3 + 1 + 0}{3} = 1.33; \bar{r}_3 = \frac{1 + 0 + 0}{3} = 0.33$$ 
-$$ \bar{r}_4 = \frac{2 + 1 + 0}{3} = 1; \bar{r}_5 = \frac{0 + 0 + 3}{3} = 1 $$
-
-Với `Reader1` và `Reader2`: 
-$$ sim(1, 2) = \frac{\sum_{s \in S_{12}} (r_{1s} - \bar{r}_1) \cdot (r_{2s} - \bar{r}_2)}{\sqrt{\sum_{s \in S_{12}} (r_{1s} - \bar{r}_1)^2} \sqrt{\sum_{s \in S_{12}} (r_{2s} - \bar{r}_2)^2}} $$
-
-$$ = \frac{(0 - 1) \cdot (3 - 1.33) + (2 - 1) \cdot (1 - 1.33) + (1 - 1) \cdot (0 - 1.33)}{\sqrt{(0 - 1)^2 + (2 - 1)^2 + (1 - 1)^2} \sqrt{(3 - 1.33)^2 + (1 - 1.33)^2 + (0 - 1.33)^2}} $$
-
-$$ = \frac{-2}{\sqrt{2} \sqrt{4.67}} \approx -0.654 $$
-
-*Tương tự với các cặp người đọc `Reader1` và `Reader3`, `Reader1` và `Reader4`, `Reader1` và `Reader5` ta có bảng tính toán độ tương đồng `Cosine` giữa `Reader1` và các người đọc khác như sau:*
-
-| | Reader2 | Reader3 | Reader4 | Reader5 |
-|---|---|---|---|---|
-| $sim(1, i)$ | $-0.654$ | | | |
-
-💭 **An nghĩ thầy sẽ không cho tính Pearson nếu ra bài này vì công thức quá nặng 🥀**
-
----
 
 Vậy ta có thể thấy `Reader1` với `Reader4` và `Reader5` có độ tương đồng `Cosine` cao nhất. Vậy ta sẽ dự đoán đánh giá của `Reader1` cho `Book1` dựa trên đánh giá của `Reader4` và `Reader5`.
 

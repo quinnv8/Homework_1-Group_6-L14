@@ -133,19 +133,5 @@ Trong đó, $x_i$ là điểm dữ liệu thứ $i$, $\mu_{c_i}$ là điểm tru
 
 Mục tiêu của `K-means` là tối thiểu hóa hàm chi phí $J$. Với mỗi lần lặp, ta sẽ tìm được các điểm trung tâm mới, và hàm chi phí sẽ giảm dần. Vì vậy, chi phí qua các lần lặp luôn giảm dần.
 
-~~**(c) Giải thích hai loại phân bố dữ liệu hai chiều khác nhau mà `K-means` có thể không thể tạo ra các cụm chính xác. Cung cấp một số minh họa của dữ liệu trong không gian hai chiều `Euclidean`, và giải thích ngắn gọn.**~~ ❌
-
-**Đáp án:** `K-means` không thể tạo ra các cụm chính xác khi dữ liệu có 2 dạng như sau:
-
-![](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2017/02/05114142/q16sol.png)
-
-**1. Dạng hình xoắn:**
-
-Trong ví dụ như trên, `K-means` sẽ không thể tạo ra các cụm chính xác vì không có sự phân chia rõ ràng giữa các cụm và mật độ thấp giữa các cụm sẽ khiến cho việc phân loại các điểm dữ liệu trở nên khó khăn.
-
-**2. Dạng dữ liệu có nhiều cụm với mật độ khác nhau:**
-
-Trong ví dụ trên, mặc dù cụm dữ liệu lớn màu đỏ khi nhìn chung có vẻ sẽ được phân loại tốt, nhưng nếu xét kĩ hơn thì cụm dữ liệu lớn này lại bao gồm 2 cụm nhỏ với mỗi cụm có mật độ dày đặc khiến cho cụm dữ liệu lớn này lại bị thuật toán `K-means` phân loại không chính xác thành 2 cụm nhỏ.
-
 
 
